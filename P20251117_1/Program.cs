@@ -23,36 +23,38 @@ namespace P20251117_1
 
                 if (a == 0)
                 {
-                    Console.WriteLine("Ez nem másodfokú egyenlet, mert a = 0.");
-                    return;
+                    throw new Exception("a nem lehet 0");
                 }
 
-                double diszkriminans = b * b - 4 * a * c;
+                double diszkriminans = (b * b - 4 * a * c);
                 Console.WriteLine($"\nA diszkrimináns értéke: {diszkriminans}");
 
                 if (diszkriminans < 0)
                 {
-                    Console.WriteLine("Nincs megoldás, mert nem lehet negativ a gyök alatt.");
+                    throw new Exception("A diszkrimináns nem lehet negatív, nincs megoldás");
                 }
-                else if (diszkriminans == 0)
+
+                if (diszkriminans == 0)
                 {
                     double x = -b / (2 * a);
-                    Console.WriteLine("1 megoldás van.");
+                    Console.WriteLine("1 megoldás van:");
+                    Console.WriteLine($"x = {x}");
                 }
-                else
+                else  
                 {
                     double x1 = (-b + Math.Sqrt(diszkriminans)) / (2 * a);
                     double x2 = (-b - Math.Sqrt(diszkriminans)) / (2 * a);
-                    Console.WriteLine("2 megoldás van.");
+                    Console.WriteLine("2 megoldás van:");
                     Console.WriteLine($"x1 = {x1}, x2 = {x2}");
                 }
             }
-
             catch (Exception ex)
             {
-                Console.WriteLine("Nem szamot irtal be, írj be szamot.");
+                Console.WriteLine("Hiba: " + ex.Message);
             }
+
             Console.ReadKey();
+
         }
     }
 }
