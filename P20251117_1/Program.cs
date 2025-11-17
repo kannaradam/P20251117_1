@@ -32,7 +32,7 @@ namespace P20251117_1
 
                 if (diszkriminans < 0)
                 {
-                    Console.WriteLine("Nincs megoldás, mert nem lehet negativ.");
+                    Console.WriteLine("Nincs megoldás, mert nem lehet negativ a gyök alatt.");
                 }
                 else if (diszkriminans == 0)
                 {
