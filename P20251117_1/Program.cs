@@ -50,7 +50,7 @@ namespace P20251117_1
 
             catch (Exception ex)
             {
-                Console.WriteLine("a");
+                Console.WriteLine("Nem szamot irtal");
             }
             Console.ReadKey();
         }
