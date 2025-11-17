@@ -26,10 +26,33 @@ namespace P20251117_1
                     Console.WriteLine("Ez nem másodfokú egyenlet, mert a = 0.");
                     return;
                 }
+
+                double diszkriminans = b * b - 4 * a * c;
+                Console.WriteLine($"\nA diszkrimináns értéke: {diszkriminans}");
+
+                if (diszkriminans < 0)
+                {
+                    Console.WriteLine("Nincs megoldás, mert nem lehet negativ.");
+                }
+                else if (diszkriminans == 0)
+                {
+                    double x = -b / (2 * a);
+                    Console.WriteLine("1 megoldás van.");
+                }
+                else
+                {
+                    double x1 = (-b + Math.Sqrt(diszkriminans)) / (2 * a);
+                    double x2 = (-b - Math.Sqrt(diszkriminans)) / (2 * a);
+                    Console.WriteLine("2 megoldás van.");
+                    Console.WriteLine($"x1 = {x1}, x2 = {x2}");
+                }
             }
+
             catch (Exception ex)
             {
+                Console.WriteLine("a");
             }
+            Console.ReadKey();
         }
     }
 }
